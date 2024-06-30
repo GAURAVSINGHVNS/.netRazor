@@ -1,0 +1,33 @@
+﻿@model IEnumerable<mvcrazor.Models.RegistrationJoin>
+@{
+    ViewBag.Title = "ShowUser";
+}
+
+<h2>ShowUser</h2>
+ <table>
+    <tr>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>User Email</th>
+        <th>User Password</th>
+        <th>User Department</th>
+        <th>User Country</th>
+        <td></td>
+        <td></td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.rid</td>
+            <td>@item.rname</td>
+            <td>@item.remail</td>
+            <td>@item.rpassword</td>
+            <td>@item.rdepartment</td>
+            <td>@item.rcountry</td>
+            <td>@Html.ActionLink("Delete", "DeleteUser", new { A = item.rid })</td>
+            <td>@Html.ActionLink("Edit", "RegistrationForm", new { A = item.rid })</td>
+        </tr>
+    }
+</table>
+
